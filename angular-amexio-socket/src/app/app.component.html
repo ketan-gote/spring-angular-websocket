@@ -1,0 +1,21 @@
+<amexio-layout-columns [alignment]="'center'" [orientation]="'horizontal'">
+  <amexio-layout-item [fit]="true"></amexio-layout-item>
+  <amexio-layout-item [fit]="true">
+      <amexio-datagrid [title]="title +' - Showing Active User Worldwide'" [data]="data" [height]="500">
+          <amexio-data-table-column [data-index]="'name'" [data-type]="'string'" [text]="'Name'">
+          </amexio-data-table-column>
+          <amexio-data-table-column [data-index]="'country'" [data-type]="'string'" [text]="'Country'">
+          </amexio-data-table-column>
+          <amexio-data-table-column [data-index]="'action'" [data-type]="'string'" [text]="'Current Status'">
+          </amexio-data-table-column>
+          <amexio-data-table-column [data-index]="'date'" [data-type]="'string'" [text]="'Last Login'">
+            <ng-template #amexioBodyTmpl let-column let-row="row">
+              <amexio-label size="small" font-color="grey">
+                {{row.date | date : 'M/d/yy, h:mm:ss a'}}
+              </amexio-label>
+            </ng-template>
+          </amexio-data-table-column>
+        </amexio-datagrid>
+  </amexio-layout-item>
+  <amexio-layout-item [fit]="true"></amexio-layout-item>
+</amexio-layout-columns>
